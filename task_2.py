@@ -77,8 +77,8 @@ def main():
     list = bubbleSort(list)
     print("[ Log ]: Sorted list (BubbleSort): " + str(list))
 
-    list_copy.sort()
-    print("[ Log ]: Sorted list (.sort()): " + str(list_copy))
+    list_copy = sorted(list_copy)
+    print("[ Log ]: Sorted list (sorted(): " + str(list_copy))
 
     print("-" * 10 + " Strings " + "-" * 10)
 
@@ -119,6 +119,5 @@ def main():
     keysSort(dict)
 
     valSort(dict)
-
 
 main()
