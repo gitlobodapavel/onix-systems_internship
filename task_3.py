@@ -77,10 +77,7 @@ def printArguments(*args, **kwargs):
     print("[ Log ]: Args: " + str(args) + "\n" + "[ Log ]: Kwargs: " + str(kwargs))
 
 def is_divisible_by_num(devided, devider):
-    if devided % devider == 0:
-        return True
-    else:
-        return False
+    return devided % devider == 0
 
 
 def fibo(number):
@@ -110,7 +107,7 @@ def main():
 
         printArguments(12, True, 3.14, "String", name="Pavel", surname="Loboda", age="17")
 
-        print("20 \ 5 is divides without trace: " + str(is_divisible_by_num(20, 5)))
+        print("20 \ 5 is divides without trace: " + str(is_divisible_by_num(24, 5)))
 
         print("[ Log ]: Fibonacci list (0 - 25)")
 
