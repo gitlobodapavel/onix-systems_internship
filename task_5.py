@@ -32,12 +32,14 @@ def generate_ticket():
 
 def get_tickets(num=100):
     tickets = []
+    counter = 0
 
-    for i in range(num):
+    while counter < num:
         current_ticket = generate_ticket()
 
         if not number_in_list(current_ticket, tickets):
             tickets.append(current_ticket)
+            counter = counter + 1
     return tickets
 
 
