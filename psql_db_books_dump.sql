@@ -29,7 +29,7 @@ CREATE TABLE public.tbl_books (
     b_name character varying(255) NOT NULL,
     b_author character varying(255),
     b_topic smallint,
-    b_price double precision,
+    b_price numeric(10,2),
     CONSTRAINT tbl_books_b_topic_check CHECK (((b_topic >= 0) AND (b_topic <= 127)))
 );
 
@@ -68,7 +68,9 @@ ALTER TABLE public.tbl_topics ALTER COLUMN topic_id ADD GENERATED ALWAYS AS IDEN
 --
 
 COPY public.tbl_books (b_id, b_name, b_author, b_topic, b_price) FROM stdin;
-SBINCODE	Book name	Book author	1	3.99000000000000021
+SBINCODE	Book name	Book author	1	3.99
+SBINCODE	Book name	Book author	1	4.00
+SBINCODE	Book name	Book author	1	33.45
 \.
 
 
