@@ -1,0 +1,15 @@
+createdb db_books
+
+psql db_books
+
+CREATE TABLE tbl_topics (topic_id SMALLINT CHECK (topic_id BETWEEN 0 AND 127) GENERATED ALWAYS AS IDENTITY, topic_name VARCHAR(100));
+
+CREATE TABLE tbl_books (b_id VARCHAR(17), b_name VARCHAR(255) NOT NULL, b_author VARCHAR(255),
+b_topic SMALLINT CHECK (b_topic between 0 and 127), b_price FLOAT(2));
+
+comment on column tbl_books.b_id is 'ISBN код книги';
+comment on column tbl_books.b_name is 'Название книги';
+comment on column tbl_books.b_author is 'Автор';
+comment on column tbl_books.b_topic is 'Код категории, к которой относится книга';
+comment on column tbl_books.b_price is 'Стоимость';
+
