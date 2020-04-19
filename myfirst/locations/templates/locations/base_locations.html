@@ -1,0 +1,28 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {%block title%}
+        Base title
+        {%endblock%}
+    </title>
+    <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}">
+</head>
+<body>
+<div>
+    Base locations template header part
+</div>
+
+{%block content%}
+There in no any content
+{%endblock%}
+
+<div>
+    Base locations template footer part
+</div>
+
+</body>
+</html>
