@@ -5,7 +5,8 @@ from .models import User, Country, City, Symbol
 # Register your models here.
 
 admin.site.register(Symbol)
-admin.site.register(User)
+
+# admin.site.register(User)
 
 
 class CountryAdmin(admin.ModelAdmin):

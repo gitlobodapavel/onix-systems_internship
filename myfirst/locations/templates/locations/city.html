@@ -1,0 +1,17 @@
+{%extends 'locations/base.html'%}
+
+{%block page_title%}
+{{argument}} info
+{%endblock%}
+
+{%block content%}
+
+<div style="margin-top: 175px;" class=" text-center container"> <!-- Testing if bootstrap.css static file connected in base template -->
+    City: {{city.name}}<br>
+    Country: {{city.county}} <br>
+    <a style="margin-top: 25px" class="btn btn-danger" href="/locations/dropcity={{city.name}}">Delete </a>
+
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,12 @@
+{% load crispy_forms_tags %}
+{%block content%}
+<div align="center" style="margin-top: 15%;" class="text-center"> <!-- Testing if bootstrap.css static file connected in base template -->
+    <form action="" method="post" class="form-group">
+        {% csrf_token %}
+        {{ form | crispy}}
+        <button type="submit" onclose="">Login</button>
+    </form>
+</div>
+
+
+{%endblock%}

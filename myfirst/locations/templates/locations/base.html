@@ -1,0 +1,62 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block page_title %} Locations {% endblock %}
+    </title>
+
+    <!-- Base styles connecting -->
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/bootstrap-grid.css' %}">
+
+    <style>
+        body{
+            padding-bottom: 100px;
+        }
+    </style>
+    <!-- Block for custom styles connection -->
+    {% block extra_styles %}
+
+    {% endblock %}
+</head>
+<body>
+
+<!-- Base locations header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/locations">Locations</a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="/locations/countries">Countries</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-danger" style="color: white;" href="/logout">Logout</a></li>
+    </ul>
+</nav>
+
+
+{%block content%}
+There in no any content for you now :(
+{%endblock%}
+
+
+<!-- Base locations footer -->
+<footer style="background-color: white;" class="page-footer font-small light pt-4 fixed-bottom">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+      © 2020 Copyright: myfirst.com
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+
+<!-- Base scripts connecting -->
+<script src="{% static '/js/bootstrap.js'%}"></script>
+
+
+<!-- Block for custom styles connection -->
+{% block extra_scripts %}
+
+{% endblock %}
+</body>
+</html>

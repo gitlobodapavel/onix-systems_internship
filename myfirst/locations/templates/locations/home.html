@@ -1,0 +1,12 @@
+{%extends 'locations/base.html'%}
+
+
+
+{%block content%}
+
+<div style="margin-top: 15%;" class="text-center"> <!-- Testing if bootstrap.css static file connected in base template -->
+    <h6> Welcome home, {% if user.is_authenticated %} <b>{{user.username}}</b> <br> <h6 style="margin-top: 15px;">(づ￣ ³￣)づ</h6> <a class="btn btn-danger" style="margin-top: 25px;" href="/logout">logout</a> {% else %} Please login <a href="/login">here</a> {% endif %}</h6>
+</div>
+
+
+{%endblock%}
