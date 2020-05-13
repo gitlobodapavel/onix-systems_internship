@@ -1,0 +1,19 @@
+{%extends 'locations/base.html'%}
+
+{%block page_title%}
+Edit {{country.name}} info
+{%endblock%}
+
+{%block content%}
+
+<div style="margin-top: 175px;" class=" text-center container"> <!-- Testing if bootstrap.css static file connected in base template -->
+    Now you can add a new country here... <br><br><br>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Edit this country info</button>
+    </form>
+</div>
+
+
+{%endblock%}

@@ -19,9 +19,12 @@
                 <li class="text-center list-group-item"><a href="/locations/city={{item.name}}">{{item.name}}</a></li>
             {% endfor %}
             </ul>
+        <a class="btn btn-success" href="/locations/newcity">Add new city</a>
         {% else %}
             <h6>Cant find country with name {{argument}}. Check if it is in database!</h6>
         {% endif%}
+        <br><br><br>
+
     </ul>
 </div>
 
