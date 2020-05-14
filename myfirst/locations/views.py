@@ -85,7 +85,6 @@ def new_symbol(request):
         form = SymbolForm(request.POST, request.FILES)
         if form.is_valid():
             symbol = form.save()
-            symbol.save()
             print("[ Log ]: New symbol saved")
             return redirect('/locations/newcountry')
     else:
@@ -125,7 +124,7 @@ def edit_country(request, country_id):
         form = CountryForm(request.POST, instance=country)
         if form.is_valid():
             country = form.save()
-            country.save()
+            # country.save()
             return redirect('/locations/countries')
     else:
         form = CountryForm(instance=country)
