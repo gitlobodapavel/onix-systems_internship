@@ -71,7 +71,7 @@
             <a href="/locations/countries" class=" btn btn-success">Countries</a>
             <div class="dropdown-content">
                 {% for item in request.countries_list%}
-                    <a href="/locations/country={{item.name}}">{{item.name}}</a>
+                    <a href="/locations/country/{{item.id}}">{{item.name}}</a>
                 {%endfor%}
           </div>
         </div>

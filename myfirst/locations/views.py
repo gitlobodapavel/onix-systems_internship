@@ -14,33 +14,21 @@ def index(request):
 
 
 @login_required(login_url='/login/')
-def country_info(request, argument):
-    countries_objects = Country.objects.all()
-    name_list = []
-    cities_list = []
+def country_info(request, countryid):
 
-    for item in countries_objects:
-        if item.name == argument:
-            cities_list = City.objects.filter(county_id=item.id)
+    country = get_object_or_404(Country, id=countryid)
+    cities = City.objects.filter(county=country.id)
 
-    for item in countries_objects:
-        name_list.append(item.name)
-
-    list_len = cities_list.__len__()
-
-    return render(request, 'locations/country.html', context={
-        'argument': argument,
-        'cities_list': cities_list,
-        'name_list': name_list,
-        'list_len': list_len
+    return render(request, 'locations/country.html', {
+        'country': country,
+        'cities': cities,
     })
 
 
 @login_required(login_url='/login/')
 def city_info(request, argument):
-    city = get_object_or_404(City, name=argument)
+    city = get_object_or_404(City, id=argument)
     return render(request, 'locations/city.html', context={
-        'argument': argument,
         'city': city,
     })
 

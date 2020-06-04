@@ -12,9 +12,9 @@ Countries
 
     <ul class="list-group">
         {% for item in countries_objects%}
-            <li class="text-center list-group-item"><span style="font-size:24px;"><b><a href="/locations/country={{item.name}}">{{item.name}}</a></b></span> <br>
-                <a href="/locations/country={{item.name}}"><img style="height: 100px; width: auto;" src="{{item.flag.image.url}}" alt=""> </a><br> <p>{{item.description | slice:":500"}}</p><p>
-                <a href="/locations/editcountry_id={{item.id}}" class="btn btn-info small" style="color: white;">Edit this country info</a></p></li>
+            <li class="text-center list-group-item"><span style="font-size:24px;"><b><a href="/locations/country/{{item.id}}">{{item.name}}</a></b></span> <br>
+                <a href="/locations/country/{{item.id}}"><img style="height: 100px; width: auto;" src="{{item.flag.image.url}}" alt=""> </a><br> <p>{{item.description | slice:":500"}}</p><p>
+                <a href="/locations/editcountry/{{item.id}}" class="btn btn-info small" style="color: white;">Edit this country info</a></p></li>
         {% endfor %}
         <div class="text-center" style="margin-top: 50px;" ><p><a href="/locations/newsymbol" class="btn btn-success" >Add new country</a></p></div>
     </ul>

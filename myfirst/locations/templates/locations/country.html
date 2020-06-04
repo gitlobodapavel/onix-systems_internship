@@ -1,7 +1,7 @@
 {%extends 'locations/base.html'%}
 
 {%block page_title%}
-{{argument}} info
+{{country.name}} info
 {%endblock%}
 
 {%block content%}
@@ -9,20 +9,13 @@
 <div style="margin-top: 75px;" class="container"> <!-- Testing if bootstrap.css static file connected in base template -->
 
     <ul class="list-group">
-        {% if argument in name_list%}
-        <span style="font-size:24px;"><b>Country: {{argument}}</b></span> <br>
-            {% if list_len == 0%}
-                There is no registered cities for country {{argument}}
-            {%endif%}
+        <span style="font-size:24px;"><b>Country: {{country.name}}</b></span> <br>
             <ul style="margin-top: 50px;" class="list-group">
-            {% for item in cities_list%}
-                <li class="text-center list-group-item"><a href="/locations/city={{item.name}}">{{item.name}}</a></li>
+            {% for city in cities%}
+                <li class="text-center list-group-item"><a href="/locations/city/{{city.id}}">{{city.name}}</a></li>
             {% endfor %}
             </ul>
         <a class="btn btn-success" href="/locations/newcity">Add new city</a>
-        {% else %}
-            <h6>Cant find country with name {{argument}}. Check if it is in database!</h6>
-        {% endif%}
         <br><br><br>
 
     </ul>
