@@ -6,13 +6,13 @@ from .doc_yasg import urlpatterns as doc_urls
 
 router = DefaultRouter()
 router.register(r'cities', CityView, basename='user')
-router.register(r'cities/country_id/(?P<county>[0-9]+)', CityFilteredView, basename='citiesfiltered')
+router.register(r'cities/country_id/(?P<county>[0-9]+)', CityFilteredView, basename='cities_filtered')
 
 
 urlpatterns = [
-    path('users/', UsersView.as_view(), name='UserView'),
-    path('countries/', CountryView.as_view(), name='UserView'),
-    path('countries/<int:pk>', SingleCountryView.as_view(), name='UserView'),
+    path('users/', UsersView.as_view(), name='user_view'),
+    path('countries/', CountryView.as_view(), name='country_view'),
+    path('countries/<int:pk>', SingleCountryView.as_view(), name='single_country_view'),
     path('google/', GoogleView.as_view(), name='google'),
 
     # JWT auth urls

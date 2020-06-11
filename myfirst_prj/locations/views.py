@@ -56,7 +56,7 @@ def new_country(request):
         form = CountryForm(request.POST)
         if form.is_valid():
             country = form.save()
-            country.save()
+            #country.save()
             return redirect('/locations/countries')
     else:
         form = CountryForm()

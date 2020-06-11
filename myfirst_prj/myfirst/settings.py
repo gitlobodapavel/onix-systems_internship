@@ -94,6 +94,9 @@ DATABASES = {
         'PORT': '3306',
         'USER': 'django',
         'PASSWORD': 'django-admin',
+        'TEST': {
+            'NAME': 'test_db',
+        }
     }
 }
 
@@ -148,3 +151,21 @@ LOGIN_REDIRECT_URL = '/locations/'
 LOGOUT_REDIRECT_URL = '/locations/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'locationswebapp@gmail.com'
+EMAIL_HOST_PASSWORD = 'locationspass123'
+EMAIL_PORT = 587
+
+# REDIS related settings
+REDIS_HOST = 'localhost'
+REDIS_PORT = '6379'
+BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
+CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
